@@ -9,6 +9,10 @@ public class Movie implements Comparable<Movie> {
         this.year = year;
     }
 
+    public int getYear() {
+        return year;
+    }
+
     @Override
     public int compareTo(Movie o) {
         return name.compareTo(o.name);
