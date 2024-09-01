@@ -1,3 +1,5 @@
+package exercise2;
+
 public class PerisableProduct extends Product {
     private int dueYear;
     public PerisableProduct(int dueYear, String name, double price) {
