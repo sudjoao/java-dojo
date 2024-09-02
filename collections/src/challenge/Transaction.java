@@ -19,6 +19,6 @@ public class Transaction {
 
     @Override
     public String toString() {
-        return "%s - R$ %f".formatted(name, price);
+        return "%s - R$ %.2f".formatted(name, price);
     }
 }
