@@ -10,22 +10,25 @@ public class Main {
         Account account = new Account(cardLimit);
         int option = -1;
 
-        while(option != 3){
+        while(option != 4){
             System.out.println(account.info());
-            System.out.println("Qual operação você deseja fazer?\n1. Visualizar transações\n2. Adicionar nova transação\n3. Sair");
+            System.out.println("Qual operação você deseja fazer?\n1. Visualizar transações ordenadas por preço\n2. Visualizar transações ordenadas por nome\n3. Adicionar nova transação\n4. Sair");
             option = scanner.nextInt();
             scanner.nextLine();
             switch (option) {
                 case 1:
-                    System.out.println(account.getTransactions());
+                    System.out.println(account.getPriceOrderedTransactions());
                     break;
                 case 2:
+                    System.out.println(account.getNameOrderedTransactions());
+                    break;
+                case 3:
                     System.out.println("Digite o nome da transação");
                     String name = scanner.nextLine();
                     System.out.println("Digite o valor da transação");
                     double value = scanner.nextDouble();
                     account.addTransaction(new Transaction(name, value));
-                case 3:
+                case 4:
                     break;
                 default:
                     System.out.println("Opção inválida");

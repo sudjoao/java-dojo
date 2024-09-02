@@ -1,6 +1,7 @@
 package challenge;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Account {
@@ -17,7 +18,7 @@ public class Account {
     }
 
     public List<Transaction> getTransactions() {
-        return transactions;
+        return new ArrayList<>(transactions);
     }
 
     public void addTransaction(Transaction transaction){
@@ -29,11 +30,24 @@ public class Account {
     }
 
     public String info(){
-        return "Sua conta com o cartão de limite total de %f possui %d transações que totalizam R$ %f.\nO limite atual do cartão é: R$ %f\n.".formatted(cardLimit, transactions.size(), totalSpent(), cardLimit - totalSpent());
+        return "Sua conta com o cartão de limite total de %.2f possui %d transações que totalizam R$ %.2f.\nO limite atual do cartão é: R$ %.2f\n.".formatted(cardLimit, transactions.size(), totalSpent(), cardLimit - totalSpent());
     }
 
     public double totalSpent() {
         return transactions.stream().mapToDouble(Transaction::getPrice).sum();
     }
+
+    public List<Transaction> getNameOrderedTransactions() {
+        return transactions.stream()
+                .sorted(Comparator.comparing(Transaction::getName))
+                .toList();
+    }
+
+    public List<Transaction> getPriceOrderedTransactions() {
+        return transactions.stream()
+                .sorted(Comparator.comparing(Transaction::getPrice))
+                .toList();
+    }
+
 }
 
