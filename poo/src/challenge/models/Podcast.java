@@ -1,4 +1,4 @@
-package challenge;
+package challenge.models;
 
 import java.time.LocalDate;
 import java.util.Optional;
@@ -21,11 +21,11 @@ public class Podcast extends Audio {
     public void play() {
         super.play();
         String guestMessage = guest.map("with the guest %s"::formatted).orElse("");
-        System.out.printf("Playing the episode %d - %s of %s %s\n", episodeNumber, getTitle(), seriesName, guestMessage);
+        System.out.printf("Playing the episode %d - %s of %s %s\n", episodeNumber, title, seriesName, guestMessage);
     }
 
     @Override
     public String toString() {
-        return "Episode %d - %s from %s".formatted(episodeNumber, getTitle(), host);
+        return "Episode %d - %s from %s".formatted(episodeNumber, title, host);
     }
 }

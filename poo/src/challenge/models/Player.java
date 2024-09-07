@@ -1,4 +1,4 @@
-package challenge;
+package challenge.models;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package challenge;
+package challenge.models;
 
 import java.time.LocalDate;
 
@@ -17,11 +17,11 @@ public class Song extends Audio {
     @Override
     public void play() {
         super.play();
-        System.out.printf("Playing the song %d - %s of the album %s from %s\n", trackNumber, getTitle(), album, artist);
+        System.out.printf("Playing the song %d - %s of the album %s from %s\n", trackNumber, title, album, artist);
     }
 
     @Override
     public String toString() {
-        return "%s (%s) from %s".formatted(getTitle(), album, artist);
+        return "%s (%s) from %s".formatted(title, album, artist);
     }
 }

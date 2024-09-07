@@ -1,16 +1,16 @@
-package challenge;
+package challenge.models;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Audio  implements  Playable {
-    private final String title;
-    private final int durationInSeconds;
-    private final String genre;
-    private final LocalDate releaseDate;
-    private int playCount;
-    private final List<Double> rating;
+    protected final String title;
+    protected final int durationInSeconds;
+    protected final String genre;
+    protected final LocalDate releaseDate;
+    protected int playCount;
+    protected final List<Double> rating;
 
     public Audio(LocalDate releaseDate, String genre, int durationInSeconds, String title) {
         this.releaseDate = releaseDate;
